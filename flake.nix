@@ -15,7 +15,12 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [python3];
+          buildInputs = with pkgs; [
+            cabal-install
+            ghc
+            haskell-language-server
+            python3
+          ];
         };
       }
     );
